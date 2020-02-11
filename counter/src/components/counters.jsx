@@ -3,6 +3,7 @@ import Counter from "./counter";
 class Counters extends Component {
   
   render() {
+    //sfc
     const{onReset, counters, onDelete, onIncrement} = this.props;
 
 
