@@ -4,7 +4,7 @@ class Counters extends Component {
   
   render() {
     //sfc
-    const{onReset, counters, onDelete, onIncrement} = this.props;
+    const{onReset, counters, onDelete, onIncrement, onDecrement} = this.props;
 
 
     return (
@@ -22,6 +22,7 @@ class Counters extends Component {
             counter={counter}
             onDelete={onDelete}
             onIncrement={onIncrement}
+            onDecrement={onDecrement}
           ></Counter>
         ))}
       </div>
