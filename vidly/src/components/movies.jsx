@@ -23,7 +23,7 @@ class Movies extends Component {
   }
 
   handleDelete = movie => {
-    // console.log(movie);
+     //console.log(movie);
     const movies = this.state.movies.filter(m => m._id !== movie._id);
     this.setState({ movies });
   };
@@ -99,7 +99,7 @@ const {totalCount, data: movies} = this.getPagedData();
             movies={movies}
             sortColumn={sortColumn}
             onLike={this.handleLike}
-            onDelete={this.onDelete}
+            onDelete={this.handleDelete}
             onSort={this.handleSort}
           />
           <Pagination
