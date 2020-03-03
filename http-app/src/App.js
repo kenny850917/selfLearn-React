@@ -42,7 +42,7 @@ class App extends Component {
     this.setState({ posts });
 
     try {
-      await http.delete("s" + config.apiEndpoint + "/" + post.id);
+      await http.delete(config.apiEndpoint + "/" + post.id);
       //for stimulating error only
       //throw new Error("");
     } catch (ex) {
