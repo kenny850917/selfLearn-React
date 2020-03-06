@@ -1,0 +1,27 @@
+{
+  "name": "http-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@sentry/browser": "^5.13.0",
+    "axios": "^0.18.1",
+    "bootstrap": "^4.4.1",
+    "postcss-loader": "^3.0.0",
+    "raven-js": "^3.26.4",
+    "react": "^16.4.1",
+    "react-dom": "^16.13.0",
+    "react-scripts": "^3.4.0",
+    "react-toastify": "^4.5.2",
+    "toastify": "^2.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "css-loader": "^3.4.2",
+    "json-loader": "^0.5.7"
+  }
+}

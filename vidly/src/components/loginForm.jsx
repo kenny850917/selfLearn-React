@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
 import Joi from "joi-browser";
 import Form from "./common/form";
+import auth from "../services/authServices";
 class LoginForm extends Form {
   // username = React.createRef();
 
@@ -17,12 +19,25 @@ class LoginForm extends Form {
       .required()
       .label("Password")
   };
-  doSubmit = () => {
+  doSubmit = async () => {
     //call the server
-    console.log("Submitted");
+    try {
+      const { data } = this.state;
+      await auth.login(data.username, data.password);
+
+      const { state } = this.props.location;
+      window.location = state ? state.from.pathname : "/";
+    } catch (ex) {
+      if (ex.response && ex.response.status === 400) {
+        const errors = { ...this.state.errors };
+        errors.username = ex.response.data;
+        this.setState({ errors });
+      }
+    }
   };
 
   render() {
+    if (auth.getCurrentuser()) return <Redirect to="/" />;
     return (
       <div>
         <h1>Login</h1>
